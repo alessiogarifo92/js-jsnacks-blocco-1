@@ -17,12 +17,21 @@ var arrayObj = [
 console.log(arrayObj);
 
 // copia array di partenza a cui aggiungere position
-var arrayObj2 = [
-  {name: 'Poppy', type: 'tshirt', color: 'red'},
-  {name: 'Jumping', type: 'occhiali', color: 'blue'},
-  {name: 'CrissCross', type: 'scarpe', color: 'black'},
-  {name: 'Jenny', type: 'borsa', color: 'pink'},
-];
+var arrayObj2 = [];
+
+// ciclo per copiare oggetti in nuovo array
+for (var i = 0; i < arrayObj.length; i++) {
+  //creo oggetto
+  arrayObj2.push({});
+
+  // utilizzo for in per riportare stesse proprietà all'interno del nuovo array
+  for (var key in arrayObj[i]) {
+    arrayObj2[i][key] = arrayObj[i][key];
+  }
+}
+// ritorna copia arrayObj ma poi modifiche incidono su entrambi array...
+// var arrayObj2 = arrayObj.slice();
+// console.log(arrayObj2);
 
 // ciclo arrayObj2 e inserisco per ogni oggetto index, nuova proprietà position e lettera random ricavata da funzione
 for (var i = 0; i < arrayObj2.length; i++) {
